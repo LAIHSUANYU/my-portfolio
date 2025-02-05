@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品展示</title>
-    <link rel="stylesheet" href="style.css"> <!-- 連結外部 CSS -->
+    <title>我的作品集</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>歡迎來到我的作品展示網站</h1>
+
+    <header class="hero">
+        <h1>歡迎來到我的作品展示</h1>
+        <img src="images/profile.png" alt="我的大頭照" class="profile-pic">
+        <p>嗨，我是 Sally，一位熱愛攝影、繪畫與書法的藝術創作者。</p>
+        <button class="explore-btn" onclick="scrollToSection()">探索我的藝術創作</button>
+    </header>
+
+    <!-- 藝術分類區塊 -->
+    <section id="art-section">
+        <h2>我的藝術創作</h2>
+        <p>選擇你喜歡的分類來觀看作品：</p>
+        <div class="category">
+            <a href="photography.html" class="category-item">📸 攝影</a>
+            <a href="painting.html" class="category-item">🎨 繪畫</a>
+            <a href="calligraphy.html" class="category-item">🖋️ 書法</a>
+        </div>        
+    </section>
+
+    <script>
+        function scrollToSection() {
+            document.getElementById("art-section").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
 </body>
 </html>
