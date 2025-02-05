@@ -73,41 +73,77 @@ p {
 }
 
 /* 藝術分類區塊 */
-#art-section {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #fff;
-}
 
-h1, h2 {
+h1 {
     text-align: center;
     font-weight: 700;
     margin-bottom: 15px;
     color: #ff758c;
 }
 
-.category a {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
 
+/* 讓每個分類橫幅佔滿整個寬度 */
 .category-item {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 20px;
-    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 250px;  /* 控制橫幅高度 */
     color: white;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.category-item:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #ff7eb3, #ff9a9e);
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+/* 背景圖片設定 */
+.photography {
+    background: url('images/photography-example.jpg') center/cover no-repeat;
 }
+
+.painting {
+    background: url('images/painting-example.jpg') center/cover no-repeat;
+}
+
+.calligraphy {
+    background: url('images/calligraphy-example.jpg') center/cover no-repeat;
+}
+
+/* 讓背景圖變暗，讓文字更清楚 */
+.category-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明黑色遮罩 */
+}
+
+/* 文字區塊 */
+.category-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.category-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.category-content p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* 滑鼠移上去時增加互動感 */
+.category-item:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 .subpage-header {
     text-align: center;
