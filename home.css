@@ -1,0 +1,78 @@
+/* ========== 首頁樣式 (home.css) ========== */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ----- 首頁 Hero 區塊 ----- */
+.hero {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 大頭照樣式 */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* 探索按鈕 */
+.explore-btn {
+    background-color: white;
+    color: #ff758c;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.explore-btn:hover {
+    background-color: #ff9a9e;
+    color: white;
+}
+
+/* 藝術分類區塊 */
+.category-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 250px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.category-item:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}

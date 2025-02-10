@@ -1,0 +1,76 @@
+/* ========== 子頁面樣式 (subpage.css) ========== */
+
+/* 頁面標題區塊 */
+.subpage-header {
+    text-align: center;
+    padding: 30px;
+    background-color: #ff758c;
+    color: white;
+}
+
+/* 返回按鈕 */
+.back-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: white;
+    color: #ff758c;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.back-btn:hover {
+    background-color: #ff9a9e;
+    color: white;
+}
+
+/* 書本翻頁效果 */
+.book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    perspective: 1500px;
+}
+
+.left-page, .right-page {
+    width: 45%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease-in-out;
+}
+.right-page {
+    right: 0;
+}
+
+/* 翻頁動畫 */
+.turn {
+    transform: rotateY(-180deg);
+}
+
+/* 圖片展示區 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}

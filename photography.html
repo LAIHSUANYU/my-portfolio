@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>攝影作品</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="subpage.css">
 </head>
 <body>
 
@@ -13,11 +13,45 @@
         <a href="index.html" class="back-btn">⬅ 返回首頁</a>
     </header>
 
-    <div class="gallery">
-        <img src="images/photo1.jpg" alt="攝影作品1">
-        <img src="images/photo2.jpg" alt="攝影作品2">
-        <img src="images/photo3.jpg" alt="攝影作品3">
+    <!-- 🔹 封面頁 -->
+    <div id="cover-page" class="cover">
+        <h1>我的攝影作品集</h1>
+        <button onclick="startBook()">開始翻閱</button>
     </div>
 
+    <!-- 🔹 書本內容（預設隱藏） -->
+    <div id="book-content" class="hidden">
+        <div class="book-container">
+            <div class="page left-page" onclick="prevPage()">
+                <img id="prev-img" src="photoimages/" alt="作品">
+            </div>
+        
+            <div class="page right-page" onclick="nextPage()">
+                <div class="content">
+                    <h2 id="title">作品標題 1</h2>
+                    <p id="description">這是作品的描述內容，介紹這張作品的創作理念與故事。</p>
+                    <button onclick="goBack()">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 圖片展示區（用來點擊進入翻書模式） -->
+    <div class="gallery">
+        <img src="photoimages/duck.JPG" alt="攝影作品1" onclick="openBook(0)">
+        <img src="photoimages/goose.JPG" alt="攝影作品2" onclick="openBook(1)">
+        <img src="photoimages/building.JPG" alt="攝影作品3" onclick="openBook(2)">
+    </div>
+
+    <!-- 🔹 背景音樂 & 翻頁音效 -->
+    <audio id="bg-music" loop>
+        <source src="audio/background.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="flip-sound">
+        <source src="music/翻頁-03-紙張-書本-音效-high-quality.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="Page turning.js"></script>
 </body>
 </html>
